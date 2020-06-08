@@ -1,0 +1,14 @@
+{
+    "name": "kings/first-unit",
+    "description": "used for studing process",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kingsley Nwa",
+            "email": "kingkom001@yahoo.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
