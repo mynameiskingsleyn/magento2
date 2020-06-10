@@ -1,0 +1,10 @@
+<!--<?xml version="1.0"?>-->
+<!--<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+        <!--xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">-->
+    <!--&lt;!&ndash;<event name="customer_register_success">&ndash;&gt;-->
+        <!--&lt;!&ndash;<observer name="customer-register" instance="Kings\FirstUnit\Observer\ChangeCustomerGroupId" />&ndash;&gt;-->
+    <!--&lt;!&ndash;</event>&ndash;&gt;-->
+    <!--&lt;!&ndash;<event name="my_module_event_after">&ndash;&gt;-->
+        <!--&lt;!&ndash;<observer name="myObserverName" instance="Kings\FirstUnit\Observer\MyObserver" />&ndash;&gt;-->
+    <!--&lt;!&ndash;</event>&ndash;&gt;-->
+<!--</config>-->

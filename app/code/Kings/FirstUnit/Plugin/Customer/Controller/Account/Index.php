@@ -16,8 +16,12 @@ class Index
 
     public function afterExecute(\Magento\Customer\Controller\Account\Index $subject, $resultPage)
     {
-        $resultPage->getconfig()->getTitle()->set(__('welcome back %l',$this->customerSession->getCustomer()
+        $resultPage->getconfig()->getTitle()->set(__('welcome back '.$this->customerSession->getCustomer()
         ->getName()));
+//        $resultPage->getconfig()->getPage()->set(__('welcome back '.$this->customerSession->getCustomer()
+//                ->getName()));
+//       var_dump($resultPage->getconfig()->getShortHeading());
+//       exit();
         return $resultPage;
     }
 }

@@ -9,6 +9,7 @@
 use Magento\Framework\App\Bootstrap;
 use Magento\Framework\App\Filesystem\DirectoryList;
 
+//echo "testing ytal!!"; exit();
 try {
     require __DIR__ . '/../app/bootstrap.php';
 } catch (\Exception $e) {

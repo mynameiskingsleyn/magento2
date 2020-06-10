@@ -9,6 +9,6 @@ class Test extends \Magento\Framework\App\Action\Action
         //$eventData = "Testing Car door";
         //echo $eventData;
         //$this->_eventManager->dispatch('my_module_event_after',['myEventData'=>$eventData]);
-        echo "Testing"; exit;
+        echo "Testing testing"; exit;
     }
 }
