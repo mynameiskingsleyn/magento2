@@ -1,0 +1,15 @@
+<?php
+/** @var \Mastering\SampleModule\Block\Hello $block */
+    ?>
+    <h1>List of Items</h1>
+    <ul>
+        <?php
+        foreach($block->getItems() as $item) : ?>
+        <li>
+            <?php echo $item->getName() .'<---->'. $item->getDescription() ?>
+        </li>
+        <?php
+        endforeach;
+        ?>
+    </ul>
+
