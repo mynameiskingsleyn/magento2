@@ -18,6 +18,7 @@ class Index extends \Magento\Framework\App\Action\Action
 
     public function execute()
     {
+        echo 'my index controller works!!'; exit;
 //        $resultPage = $this->resultPageFactory->create();
 //        $resultPage->getConfig()->getTitle()->set('New page titls here');
 //        return $resultPage;
