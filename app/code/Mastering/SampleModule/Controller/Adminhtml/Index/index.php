@@ -15,8 +15,11 @@ class Index extends Action
         /**
          * @var \Magento\Framework\Controller\Result\Raw $result
          */
-        $result = $this->resultFactory->create(ResultFactory::TYPE_RAW);
-        $result->setContents('Hello Admin World');
+//        $result = $this->resultFactory->create(ResultFactory::TYPE_RAW);
+//        $result->setContents('Hello Admin World');
+//        return $result;
+        $result = $this->resultFactory->create(ResultFactory::TYPE_PAGE);
+        //print_r($result); exit;
         return $result;
     }
 }

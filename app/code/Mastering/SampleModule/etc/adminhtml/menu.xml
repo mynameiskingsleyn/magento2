@@ -1,0 +1,11 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+        <menu>
+            <add id="Mastering_SampleModule::mastering" title="Mastering" module="Mastering_SampleModule"
+                 resource="Mastering_SampleModule::mastering" action="mastering" translate="title" sortOrder="900" />
+        </menu>
+        <!--<menu>-->
+            <!--<add id="Kings_FirstUnit::kings" title="Kings" module="Kings_FirstUnit"-->
+                 <!--resource="Mastering_SampleModule::mastering" action="mastering" translate="title" sortOrder="910" />-->
+        <!--</menu>-->
+</config>

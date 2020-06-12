@@ -19,7 +19,7 @@ class ChangeCustomerGroupId implements ObserverInterface
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
         $customer = $observer->getEvent()->getCustomer();
-        if($customer->getGroupID() == 1){
+        if($customer->getGroupID() == 2){
             $customer->setGroupId(self::CUSTOMER_GROUP_ID);
             $this->_customerRepositoryInterface->save($customer);
         }

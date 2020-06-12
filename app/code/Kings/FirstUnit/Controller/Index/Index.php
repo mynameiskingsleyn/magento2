@@ -18,12 +18,12 @@ class Index extends \Magento\Framework\App\Action\Action
 
     public function execute()
     {
-        //echo 'my index controller works!!'; exit;
         $resultPage = $this->resultPageFactory->create();
 //        $resultPage->getConfig()->getTitle()->set('New page titls here');
+        $this->_eventManager->dispatch('kings_index_after',['myEventData'=>$resultPage]);
         return $resultPage;
         //$resultPage = $this->resultPageFactory->create();
-        //$resultPage->addHandle('kings_index_temp');
+        //$resultPage->addHandle('kings_index_temp'); // add a template from controller.
         //$resultPage->getConfig()->getTitle()->set('Another page title');
         //return $resultPage;
 

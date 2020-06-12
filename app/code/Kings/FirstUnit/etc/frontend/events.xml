@@ -4,6 +4,9 @@
     <event name="layout_generate_blocks_after">
         <observer name="layoutObserver" instance="Kings\FirstUnit\Model\Layout"/>
     </event>
+    <event name="kings_index_after">
+        <observer name="indexObserver" instance="Kings\FirstUnit\Observer\KingsIndexObserver"/>
+    </event>
     <!--<event name="customer_register_success">-->
         <!--<observer name="customer-register" instance="Kings\FirstUnit\Observer\ChangeCustomerGroupId" />-->
     <!--</event>-->
