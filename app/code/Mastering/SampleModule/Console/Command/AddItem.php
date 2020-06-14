@@ -3,6 +3,7 @@
 namespace Mastering\SampleModule\Console\Command;
 
 //use Symfony\Component\Console\Command\Command;
+use Psr\Log\LoggerInterface;
 use Symfony\Component\Console\{
     Command\Command,
     Input\InputArgument,
@@ -23,9 +24,11 @@ class AddItem extends Command
    const NAME ='mastering:item:add';
 
    private $itemFactory;
+   private $logger;
 
-   public function __construct(ItemFactory $itemFactory)
+   public function __construct(ItemFactory $itemFactory, LoggerInterface $logger)
    {
+       $this->logger = $logger;
        $this->itemFactory = $itemFactory;
        parent:: __construct();
    }
@@ -53,6 +56,7 @@ class AddItem extends Command
        $item->setDescription($input->getArgument(self::INPUT_KEY_DESCTIPTION));
        $item->setIsObjectNew(true);
        $item->save();
+       $this->logger->debug('item was created');
 
        return Cli::RETURN_SUCCESS;
 

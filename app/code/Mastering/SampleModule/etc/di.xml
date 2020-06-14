@@ -10,8 +10,45 @@
             </argument>
         </arguments>
     </type>
+    <!--<type name="Magento\Framework\Console\CommandList">-->
+        <!--<arguments>-->
+            <!--<argument name="commands" xsi:type="array">-->
+                <!--<item name="masteringAddMoreItem" xsi:type="object">-->
+                    <!--Mastering\SampleModule\Console\Command\AddMoreItem-->
+                <!--</item>-->
+            <!--</argument>-->
+        <!--</arguments>-->
+    <!--</type>-->
     <preference for="Mastering\SampleModule\Api\Data\ItemInterface" type="Mastering\SampleModule\Model\Item" />
     <preference for="Mastering\SampleModule\Api\ItemRepositoryInterface" type="Mastering\SampleModule\Model\ItemRepository" />
+    <!--<preference for="Magento\Framework\Logger\Handler\Debug" type="Mastering\SampleModule\Model\Handler\DebugHandler"></preference>-->
+    <!--<type name="Magento\Framework\Logger\Monolog">-->
+        <!--<arguments>-->
+            <!--<argument name="handlers"  xsi:type="array">-->
+                <!--<item name="debug" xsi:type="object">Mastering\SampleModule\Model\Handler\DebugHandler</item>-->
+            <!--</argument>-->
+        <!--</arguments>-->
+    <!--</type>-->
+    <virtualType  name="MasteringLogger" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="name" xsi:type="string">main</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">Magento\Framework\Logger\Handler\System</item>
+                <item name="debug" xsi:type="object">Mastering\SampleModule\Model\Handler\DebugHandler</item>
+                <item name="syslog" xsi:type="object">Magento\Framework\Logger\Handler\Syslog</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Mastering\SampleModule\Console\Command\AddItem">
+        <arguments>
+            <argument name="logger" xsi:type="object">MasteringLogger</argument>
+        </arguments>
+    </type>
+    <!--<type name="Mastering\SampleModule\Observer\Logger">-->
+        <!--<arguments>-->
+            <!--<argument name="logger" xsi:type="object">MasteringLogger</argument>-->
+        <!--</arguments>-->
+    <!--</type>-->
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
@@ -19,4 +56,11 @@
             </argument>
         </arguments>
     </type>
+    <virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid"> <!-- can be found in module-sales di.xml #488 -->
+        <arguments>
+            <argument name="columns" xsi:type="array">
+                <item name="base_tax_amount" xsi:type="string">sales_order.base_tax_amount</item><!-- sales_order is the table -->
+            </argument>
+        </arguments>
+    </virtualType>
 </config>
