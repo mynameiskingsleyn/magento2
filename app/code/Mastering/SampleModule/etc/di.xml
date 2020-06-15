@@ -8,19 +8,16 @@
                     Mastering\SampleModule\Console\Command\AddItem
                 </item>
             </argument>
+            <argument name="commands" xsi:type="array">
+                <item name="masteringAddMoreItem" xsi:type="object">
+                    Mastering\SampleModule\Console\Command\AddMoreItem
+                </item>
+            </argument>
         </arguments>
     </type>
-    <!--<type name="Magento\Framework\Console\CommandList">-->
-        <!--<arguments>-->
-            <!--<argument name="commands" xsi:type="array">-->
-                <!--<item name="masteringAddMoreItem" xsi:type="object">-->
-                    <!--Mastering\SampleModule\Console\Command\AddMoreItem-->
-                <!--</item>-->
-            <!--</argument>-->
-        <!--</arguments>-->
-    <!--</type>-->
     <preference for="Mastering\SampleModule\Api\Data\ItemInterface" type="Mastering\SampleModule\Model\Item" />
     <preference for="Mastering\SampleModule\Api\ItemRepositoryInterface" type="Mastering\SampleModule\Model\ItemRepository" />
+    <!-- used for injection -->
     <!--<preference for="Magento\Framework\Logger\Handler\Debug" type="Mastering\SampleModule\Model\Handler\DebugHandler"></preference>-->
     <!--<type name="Magento\Framework\Logger\Monolog">-->
         <!--<arguments>-->
@@ -39,16 +36,19 @@
             </argument>
         </arguments>
     </virtualType>
-    <type name="Mastering\SampleModule\Console\Command\AddItem">
-        <arguments>
-            <argument name="logger" xsi:type="object">MasteringLogger</argument>
-        </arguments>
-    </type>
-    <!--<type name="Mastering\SampleModule\Observer\Logger">-->
+    <!--<type name="Mastering\SampleModule\Console\Command\AddItem">-->
         <!--<arguments>-->
             <!--<argument name="logger" xsi:type="object">MasteringLogger</argument>-->
         <!--</arguments>-->
     <!--</type>-->
+    <type name="Mastering\SampleModule\Console\Command\AddItem">
+        <plugin name="console_logging" type="Mastering\SampleModule\Plugin\Logger"></plugin>
+    </type>
+    <type name="Mastering\SampleModule\Observer\MLogger">
+        <arguments>
+            <argument name="logger" xsi:type="object">MasteringLogger</argument>
+        </arguments>
+    </type>
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">

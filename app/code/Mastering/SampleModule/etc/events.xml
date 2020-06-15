@@ -1,7 +1,10 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
-    <event name="mastering_command">
-        <observer name="mastering_logger" instance="Mastering\SampleModule\Observer\Logger"/>
+    <!--<event name="mastering_command">-->
+        <!--<observer name="master_logger" instance="Mastering\SampleModule\Observer\MLogger"/>-->
+    <!--</event>-->
+    <event name="mastering_sample_item_save_after">
+        <observer name="master_logger" instance="Mastering\SampleModule\Observer\MLogger"/>
     </event>
 </config>

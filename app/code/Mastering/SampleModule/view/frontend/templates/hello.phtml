@@ -2,6 +2,7 @@
 /** @var \Mastering\SampleModule\Block\Hello $block */
     ?>
     <h1>List of Items</h1>
+    <p> <?php echo $block->getLabel(); ?></p>
     <ul>
         <?php
         foreach($block->getItems() as $item) : ?>

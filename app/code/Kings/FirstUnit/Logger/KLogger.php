@@ -1,6 +1,6 @@
 <?php
 namespace Kings\FirstUnit\Logger;
 
-class Logger extends \Monolog\Logger
+class KLogger extends \Monolog\Logger
 {
 }

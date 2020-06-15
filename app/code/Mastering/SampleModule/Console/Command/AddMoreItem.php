@@ -3,8 +3,9 @@
 namespace Mastering\SampleModule\Console\Command;
 
 //use Symfony\Component\Console\Command\Command;
-use Magento\Framework\Event\ManagerInterface;
-use Psr\Log\LoggerInterface;
+//use Laminas\EventManager\EventManager;
+use Magento\Framework\Event\ManagerInterface as ManagerInterface;
+//use Psr\Log\LoggerInterface;
 use Symfony\Component\Console\{
     Command\Command,
     Input\InputArgument,
@@ -25,11 +26,18 @@ class AddMoreItem extends Command
     const NAME ='mastering:moreitem:add';
 
     private $itemFactory;
-    private $eventManager;
+    //private $eventManager;
 
-    public function __construct(ItemFactory $itemFactory, ManagerInterface $eventManager)
+//    public function __construct(ItemFactory $itemFactory,ManagerInterface $eventManager)
+//    {
+//
+//        $this->itemFactory = $itemFactory;
+//        parent:: __construct();
+//        $this->eventManager = $eventManager;
+//    }
+    public function __construct(ItemFactory $itemFactory)
     {
-        $this->eventManager = $eventManager;
+
         $this->itemFactory = $itemFactory;
         parent:: __construct();
     }
@@ -52,14 +60,17 @@ class AddMoreItem extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+
         $item = $this->itemFactory->create();
         $item->setName($input->getArgument(self::INPUT_KEY_NAME));
         $item->setDescription($input->getArgument(self::INPUT_KEY_DESCTIPTION));
         $item->setIsObjectNew(true);
         $item->save();
-        $this->eventManager->dispatch('mastering_command',['object'=>$item]);
+        //$this->eventManager->dispatch('mastering_command',['object'=>$item]);
 
         return Cli::RETURN_SUCCESS;
 
     }
+
+
 }
