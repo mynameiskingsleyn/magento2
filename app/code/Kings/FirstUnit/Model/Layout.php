@@ -5,7 +5,7 @@ use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
 use Zend\Log;
 use \Psr\Log\LoggerInterface as systemLogger;
-use Kings\FirstUnit\Logger\Logger as myLogger;
+use Kings\FirstUnit\Logger\KLogger as myLogger;
 
 class Layout implements ObserverInterface
 {

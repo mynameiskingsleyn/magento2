@@ -3,5 +3,4 @@
         <type name="Magento\Customer\Controller\Account\Index">
             <plugin name="Kings_FirstUnit::my_account" type="Kings\FirstUnit\Plugin\Customer\Controller\Account\Index" sortOrder="10"/>
         </type>
-
 </config>

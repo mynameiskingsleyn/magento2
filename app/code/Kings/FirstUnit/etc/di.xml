@@ -6,7 +6,7 @@
             <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
         </arguments>
     </type>
-    <type name="Kings\FirstUnit\Logger\Logger">
+    <type name="Kings\FirstUnit\Logger\KLogger">
         <arguments>
             <argument name="name" xsi:type="string">KingLogger</argument>
             <argument name="handlers"  xsi:type="array">
