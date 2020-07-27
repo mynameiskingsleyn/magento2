@@ -1,0 +1,128 @@
+@primary-color: rebeccapurple;
+@secondary-color:green;
+@dark-color-1:black;
+@header-color:@chocolate;
+@chocolate:chocolate;
+@dark-button:black;
+
+/** Header **/
+.section-items.nav-sections-items{
+  background-color: black
+}
+nav.navigation{
+  text-align: center;
+  background-color:@dark-color-1;
+  color:white;
+}
+li.level0{
+  a{
+    color:white !important;
+    &:hover{
+      color:@chocolate !important;
+    }
+    //background-color:blue;
+  }
+}
+li.level1{
+  a{
+    color:@chocolate !important;
+    //background: green;
+  }
+
+  //background-color:black;
+}
+.greet.welcome{
+  float:right;
+  list-style: none;
+}
+.header.content{
+  color:@header-color;
+}
+
+a.action.showcart{
+  text-decoration: line-through;
+  color:blue;
+}
+.page-header{
+  background-color:@dark-color-1;
+  color:white;
+}
+
+.logo img{
+  background-color:@header-color;
+  width:50%;
+}
+.blocks-promo{
+  display:flex;
+  padding-bottom:0;
+  width:fit-content;
+  justify-content: center;
+
+}
+.blocks-promo-group{
+  display:flex;
+  flex-direction:column;
+  .blocks-promo{
+    margin:0 auto;
+    //background-color:green;
+    height:fit-content;
+    &:nth-child(2){
+      margin-top:-5px;
+
+    }
+  }
+
+}
+.newsletter-setup{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  p.title{
+    text-overflow: uppercase;
+    font-size: 2em;
+    font-weight: 800;
+  }
+  .newsletter{
+    width:100%;
+    .content{
+      width:100%;
+      .form{
+        .actions{
+          button.subscribe{
+            margin-left:2px;
+            background-color:@dark-button;
+          }
+        }
+      }
+    }
+  }
+}
+// footer
+.addHeading(@heading:''){
+  content:@heading;
+  display:block;
+  padding-bottom: 15px;
+  font-weight: 800;
+  font-size: 1.5em;
+}
+.footer.content{
+  text-align: center;
+  .footer.links{
+    text-align: left;
+    &:nth-child(1)::before{
+      .addHeading('INFORMATION')
+    }
+    &:nth-child(2)::before{
+      .addHeading('SALES')
+    }
+    &:nth-child(3)::before{
+      .addHeading('MY ACCOUNT')
+    }
+    li.nav.item a{
+      color:@chocolate;
+    }
+
+  }
+
+}

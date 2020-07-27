@@ -1,13 +1,18 @@
+@primary-color: rebeccapurple;
+@secondary-color:green;
 .action{
   &.primary{
-    background:#ff5500;
-    border-color:#ff5500;
+    background-color:blue;
+    border-color:pink;
   }
 }
-
 nav.navigation > ul{
-  background-color:#ff5500;
+  background-color:inherit;
   color:#ffffff;
+}
+nav.navigation{
+  //background-color:rebeccapurple;
+  background-color: inherit;
 }
 .navigation .level0 > .level-top{
   color:#ffffff;
@@ -18,7 +23,11 @@ nav.navigation > ul{
 .page-header{
   background-color:#ccc;
 }
-
-.nav-sections-item-content {
-  background-color:#ff6625;
+.section-item-content.nav-sections-item-content {
+  //background-color:rebeccapurple;
+  background-color:@secondary-color;
+}
+.logo{
+  border:1px solid black;
+  min-width:100px;
 }
